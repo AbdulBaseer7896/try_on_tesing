@@ -7,13 +7,13 @@ from diffusers import StableDiffusionInpaintPipeline
 
 # Load model (will download on first run)
 pipe = StableDiffusionInpaintPipeline.from_pretrained(
-    "levihsu/OOTDiffusion",
+    "runwayml/stable-diffusion-inpainting",
     torch_dtype=torch.float16
 ).to("cuda")
 
 # Load images
-person_img = Image.open("person.jpg").convert("RGB").resize((512, 512))
-cloth_img = Image.open("cloth.jpg").convert("RGB").resize((512, 512))
+person_img = Image.open("black_male.png").convert("RGB").resize((512, 512))
+cloth_img = Image.open("red_sonic.png").convert("RGB").resize((512, 512))
 
 # VERY BASIC prompt (OOTDiffusion uses text + image conditioning)
 prompt = "a photo of a person wearing the given clothing"
