@@ -1,0 +1,6 @@
+pip install --force-reinstall huggingface_hub
+
+hf auth login
+
+
+
